@@ -41,6 +41,15 @@
                   <?php } ?>
                 </div>
               </div>
+              <div class="form-group required">
+                <label class="col-sm-2 control-label" for="input-order-prefix"><span data-toggle="tooltip" title="<?php echo $help_order_prefix; ?>"><?php echo $entry_order_prefix; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="payscrow_order_prefix" value="<?php echo $payscrow_order_prefix; ?>" placeholder="<?php echo $entry_order_prefix; ?>" id="input-order-prefix" class="form-control"/>
+                  <?php if ($error_order_prefix) { ?>
+                  <div class="text-danger"><?php echo $error_order_prefix; ?></div>
+                  <?php } ?>
+                </div>
+              </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-live-demo"><?php echo $entry_live_demo; ?></label>
@@ -197,7 +206,10 @@
                 <label class="col-sm-2 control-label" for="input-sort-order"><span data-toggle="tooltip" title="<?php echo $help_notification; ?>"><?php echo $text_notification_url; ?></span></label>
                 <div class="col-sm-10">
                   <div class="input-group"> <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                    <input type="text" value="<?php echo $notify_url; ?>" class="form-control"/>
+                    <input type="text" name="payscrow_notify_url" value="<?php echo $payscrow_notify_url; ?>" class="form-control"/>
+                    <?php if ($error_notify_url) { ?>
+                    <div class="text-danger"><?php echo $error_notify_url; ?></div>
+                    <?php } ?>
                   </div>
                 </div>
               </div>

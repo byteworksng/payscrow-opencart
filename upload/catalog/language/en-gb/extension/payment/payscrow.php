@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['text_title']				= '<img src="image/payment/payscrow.png" alt="Payscrow" title="Payscrow" style="border: 1px solid #EEEEEE;" />';
+$_['text_title']				= '<img src="http://payscrow.net/assets/logos/logo-black.png" alt="Payscrow" title="Payscrow" style="border: 1px solid #EEEEEE;" />';
 
 // Button
 $_['button_confirm']			= 'Continue';
@@ -36,3 +36,5 @@ $_['text_response_ref']			= 'Ref number: ';
 
 // Error
 $_['error_failed']				= 'Unable to process your payment, please try again';
+//success
+$_['success']				= 'Your payment was successful';
