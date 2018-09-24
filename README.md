@@ -6,3 +6,7 @@ To install, simply download and merge the upload folder with your existing openc
 Alternatively, you can make a .ocmod.zip file by compressing the content of the upload directory using any compression utility.
 Note, its only a .zip file but must be renamed to end with .ocmod.zip. 
 use opencart extension installer on your admin page to install the compressed file.
+
+## Plugin version
+
+2.0.4 
