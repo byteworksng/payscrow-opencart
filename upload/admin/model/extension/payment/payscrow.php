@@ -73,7 +73,7 @@ class ModelExtensionPaymentPayscrow extends Model {
 			$this->logger('Void XML request:\r\n' . print_r(simplexml_load_string($xml), 1));
 
 			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, "http://www.payscrow.net/customer/transactions/start");
+			curl_setopt($ch, CURLOPT_URL, "https://www.payscrow.net/customer/transactions/start");
 			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt($ch, CURLOPT_USERAGENT, "OpenCart " . VERSION);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

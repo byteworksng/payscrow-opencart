@@ -62,17 +62,17 @@ class ControllerExtensionPaymentPayscrow extends Controller
 
         $data['product_detail'] = $products;
 
+        $data['mobile'] = false;
+         $data['txntype'] = 'preauth';
+
         if (preg_match("/Mobile|Android|BlackBerry|iPhone|Windows Phone/", $this->request->server['HTTP_USER_AGENT'])) {
             $data['mobile'] = true;
-        } else {
-            $data['mobile'] = false;
         }
 
         if ($this->config->get('payscrow_auto_settle') == 1) {
             $data['txntype'] = 'sale';
-        } else {
-            $data['txntype'] = 'preauth';
-        }
+        } 
+        
 
         $tmp = $data['merchant_id'].$data['timestamp'].$data['amount'].$data['currency'].$this->config->get('payscrow_secret');
         $ascii = bin2hex($tmp);

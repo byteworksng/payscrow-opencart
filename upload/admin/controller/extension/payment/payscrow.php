@@ -146,94 +146,96 @@ class ControllerExtensionPaymentPayscrow extends Controller
 
         $data['cancel'] = $this->url->link('extension/extension', 'token='.$this->session->data['token'].'&type=payment', true);
 
+         $data['payscrow_merchant_id'] = $this->config->get('payscrow_merchant_id');
+
         if (isset($this->request->post['payscrow_merchant_id'])) {
             $data['payscrow_merchant_id'] = $this->request->post['payscrow_merchant_id'];
-        } else {
-            $data['payscrow_merchant_id'] = $this->config->get('payscrow_merchant_id');
-        }
+        } 
+
+        $data['payscrow_delivery_duration'] = $this->config->get('payscrow_delivery_duration');
         if (isset($this->request->post['payscrow_delivery_duration'])) {
             $data['payscrow_delivery_duration'] = $this->request->post['payscrow_delivery_duration'];
-        } else {
-            $data['payscrow_delivery_duration'] = $this->config->get('payscrow_delivery_duration');
         }
 
         if (empty($data['payscrow_delivery_duration'])) {
             $data['payscrow_delivery_duration'] = '7';
         }
 
+         $data['payscrow_live_demo'] = $this->config->get('payscrow_live_demo');
+
         if (isset($this->request->post['payscrow_live_demo'])) {
             $data['payscrow_live_demo'] = $this->request->post['payscrow_live_demo'];
-        } else {
-            $data['payscrow_live_demo'] = $this->config->get('payscrow_live_demo');
-        }
+        } 
+
+        $data['payscrow_geo_zone_id'] = $this->config->get('payscrow_geo_zone_id');
 
         if (isset($this->request->post['payscrow_geo_zone_id'])) {
             $data['payscrow_geo_zone_id'] = $this->request->post['payscrow_geo_zone_id'];
-        } else {
-            $data['payscrow_geo_zone_id'] = $this->config->get('payscrow_geo_zone_id');
         }
+
+         $data['payscrow_sort_order'] = $this->config->get('payscrow_sort_order');
 
         if (isset($this->request->post['payscrow_sort_order'])) {
             $data['payscrow_sort_order'] = $this->request->post['payscrow_sort_order'];
-        } else {
-            $data['payscrow_sort_order'] = $this->config->get('payscrow_sort_order');
-        }
+        } 
+
+        $data['payscrow_status'] = $this->config->get('payscrow_status');
 
         if (isset($this->request->post['payscrow_status'])) {
             $data['payscrow_status'] = $this->request->post['payscrow_status'];
-        } else {
-            $data['payscrow_status'] = $this->config->get('payscrow_status');
         }
+
+         $data['payscrow_debug'] = $this->config->get('payscrow_debug');
 
         if (isset($this->request->post['payscrow_debug'])) {
             $data['payscrow_debug'] = $this->request->post['payscrow_debug'];
-        } else {
-            $data['payscrow_debug'] = $this->config->get('payscrow_debug');
-        }
+        } 
+
+        $data['payscrow_order_status_success_settled_id'] = $this->config->get('payscrow_order_status_success_settled_id');
 
         if (isset($this->request->post['payscrow_order_status_success_settled_id'])) {
             $data['payscrow_order_status_success_settled_id'] = $this->request->post['payscrow_order_status_success_settled_id'];
-        } else {
-            $data['payscrow_order_status_success_settled_id'] = $this->config->get('payscrow_order_status_success_settled_id');
         }
+
         if (empty($data['payscrow_order_status_success_settled_id'])) {
             $data['payscrow_order_status_success_settled_id'] = 11;
         }
 
+        $data['payscrow_order_status_success_unsettled_id'] = $this->config->get('payscrow_order_status_success_unsettled_id');
+
         if (isset($this->request->post['payscrow_order_status_success_unsettled_id'])) {
             $data['payscrow_order_status_success_unsettled_id'] = $this->request->post['payscrow_order_status_success_unsettled_id'];
-        } else {
-            $data['payscrow_order_status_success_unsettled_id'] = $this->config->get('payscrow_order_status_success_unsettled_id');
-        }
+        } 
+
         if (empty($data['payscrow_order_status_success_unsettled_id'])) {
             $data['payscrow_order_status_success_unsettled_id'] = 12;
         }
 
+        $data['payscrow_order_status_decline_id'] = $this->config->get('payscrow_order_status_decline_id');
+
         if (isset($this->request->post['payscrow_order_status_decline_id'])) {
             $data['payscrow_order_status_decline_id'] = $this->request->post['payscrow_order_status_decline_id'];
-        } else {
-            $data['payscrow_order_status_decline_id'] = $this->config->get('payscrow_order_status_decline_id');
-        }
+        } 
 
         if (empty($data['payscrow_order_status_decline_id'])) {
             $data['payscrow_order_status_decline_id'] = 7;
         }
 
+        $data['payscrow_order_status_void_id'] = $this->config->get('payscrow_order_status_void_id');
+
         if (isset($this->request->post['payscrow_order_status_void_id'])) {
             $data['payscrow_order_status_void_id'] = $this->request->post['payscrow_order_status_void_id'];
-        } else {
-            $data['payscrow_order_status_void_id'] = $this->config->get('payscrow_order_status_void_id');
         }
+
         if (empty($data['payscrow_order_status_void_id'])) {
             $data['payscrow_order_status_void_id'] = 7;
         }
 
+        $data['payscrow_live_url'] = $this->config->get('payscrow_live_url');
 
         if (isset($this->request->post['payscrow_live_url'])) {
             $data['payscrow_live_url'] = $this->request->post['payscrow_live_url'];
-        } else {
-            $data['payscrow_live_url'] = $this->config->get('payscrow_live_url');
-        }
+        } 
 
         if (empty($data['payscrow_live_url'])) {
             $data['payscrow_live_url'] = 'https://www.payscrow.net/customer/transactions/start';
@@ -249,21 +251,22 @@ class ControllerExtensionPaymentPayscrow extends Controller
             $data['payscrow_demo_url'] = 'http://ps.ofekpc.com/customer/transactions/start';
         }
 
+
+        $data['payscrow_notify_url'] = $this->config->get('payscrow_notify_url');
+
         if (isset($this->request->post['payscrow_notify_url'])) {
             $data['payscrow_notify_url'] = $this->request->post['payscrow_notify_url'];
-        } else {
-            $data['payscrow_notify_url'] = $this->config->get('payscrow_notify_url');
         }
 
         if (empty($data['payscrow_notify_url'])) {
-            $data['payscrow_notify_url'] = 'extension/payment/payscrow/notify';;
+            $data['payscrow_notify_url'] = 'extension/payment/payscrow/notify';
         }
+
+         $data['payscrow_order_prefix'] = $this->config->get('payscrow_order_prefix');
 
         if (isset($this->request->post['payscrow_order_prefix'])) {
             $data['payscrow_order_prefix'] = $this->request->post['payscrow_order_prefix'];
-        } else {
-            $data['payscrow_order_prefix'] = $this->config->get('payscrow_order_prefix');
-        }
+        } 
 
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
@@ -310,49 +313,49 @@ class ControllerExtensionPaymentPayscrow extends Controller
                 $data['void_url'] = $this->url->link('extension/payment/payscrow/void', 'token='.$this->session->data['token'], true);
                 $data['capture_url'] = $this->url->link('extension/payment/payscrow/capture', 'token='.$this->session->data['token'], true);
 
+                $data['notify_url'] = HTTPS_CATALOG.'index.php?route=extension/payment/payscrow/notify';
+
                 if ($this->config->get('payscrow_notify_url')){
                     $data['notify_url'] = $this->config->get('payscrow_notify_url');
-                }else {
-                    $data['notify_url'] = HTTPS_CATALOG.'index.php?route=extension/payment/payscrow/notify';
                 }
+
+                $data['action_url'] = $this->config->get('payscrow_demo_url');
 
                 if ($this->config->get('payscrow_live_demo') == 1) {
                     $data['action_url'] = $this->config->get('payscrow_live_url');
-                } else {
-                    $data['action_url'] = $this->config->get('payscrow_demo_url');
                 }
+
+                 $data['void_success'] = '';
 
                 if (isset($this->session->data['void_success'])) {
                     $data['void_success'] = $this->session->data['void_success'];
 
                     unset($this->session->data['void_success']);
-                } else {
-                    $data['void_success'] = '';
-                }
+                } 
+
+                 $data['void_error'] = '';
 
                 if (isset($this->session->data['void_error'])) {
                     $data['void_error'] = $this->session->data['void_error'];
 
                     unset($this->session->data['void_error']);
-                } else {
-                    $data['void_error'] = '';
                 }
+
+                $data['capture_success'] = '';
 
                 if (isset($this->session->data['capture_success'])) {
                     $data['capture_success'] = $this->session->data['capture_success'];
 
                     unset($this->session->data['capture_success']);
-                } else {
-                    $data['capture_success'] = '';
-                }
+                } 
+
+                $data['capture_error'] = '';
 
                 if (isset($this->session->data['capture_error'])) {
                     $data['capture_error'] = $this->session->data['capture_error'];
 
                     unset($this->session->data['capture_error']);
-                } else {
-                    $data['capture_error'] = '';
-                }
+                } 
 
                 $data['text_payment_info'] = $this->language->get('text_payment_info');
                 $data['text_order_ref'] = $this->language->get('text_order_ref');
@@ -384,11 +387,11 @@ class ControllerExtensionPaymentPayscrow extends Controller
         $this->load->language('extension/payment/payscrow');
 
         if ($this->request->post['status'] == 'FAILED') {
+
+            $this->session->data['void_error'] = $this->language->get('error_void_error');
             if (isset($this->request->post['fail_reason'])) {
                 $this->session->data['void_error'] = $this->request->post['fail_reason'];
-            } else {
-                $this->session->data['void_error'] = $this->language->get('error_void_error');
-            }
+            } 
         }
 
         if ($this->request->post['status'] == 'DECLINED') {
@@ -403,11 +406,11 @@ class ControllerExtensionPaymentPayscrow extends Controller
         $this->load->language('extension/payment/payscrow');
 
         if ($this->request->post['status'] == 'FAILED') {
+
+             $this->session->data['capture_error'] = $this->language->get('error_capture_error');
             if (isset($this->request->post['fail_reason'])) {
                 $this->session->data['capture_error'] = $this->request->post['fail_reason'];
-            } else {
-                $this->session->data['capture_error'] = $this->language->get('error_capture_error');
-            }
+            } 
         }
 
         if ($this->request->post['status'] == 'APPROVED') {
