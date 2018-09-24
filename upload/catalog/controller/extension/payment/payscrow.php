@@ -11,6 +11,7 @@ class ControllerExtensionPaymentPayscrow extends Controller
 
         $this->load->model('checkout/order');
         $this->load->model('extension/payment/payscrow');
+<<<<<<< HEAD
         $this->load->model('catalog/product');
         $this->load->model('account/order');
 
@@ -23,6 +24,16 @@ class ControllerExtensionPaymentPayscrow extends Controller
             $data['action'] = $this->config->get('payscrow_live_url');
         }
 
+=======
+
+        $order_info = $this->model_checkout_order->getOrder($this->session->data['order_id']);
+
+        if ($this->config->get('payscrow_live_demo') == 1) {
+            $data['action'] = $this->config->get('payscrow_live_url');
+        } else {
+            $data['action'] = $this->config->get('payscrow_demo_url');
+        }
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
         $payscrowModel = $this->model_extension_payment_payscrow;
         $shipping = $payscrowModel->getShippingAmount($this->session->data['order_id']);
 
@@ -36,6 +47,7 @@ class ControllerExtensionPaymentPayscrow extends Controller
         $data['timestamp'] = date('Y:m:d-H:i:s');
         $data['order_id'] = $this->config->get('payscrow_order_prefix').$this->session->data['order_id'].'T'.$data['timestamp'].mt_rand(1, 999);
 
+<<<<<<< HEAD
         $data['url_notify'] = parse_url($this->config->get('payscrow_notify_url'), PHP_URL_HOST) ? $this->config->get('payscrow_notify_url') : $this->url->link($this->config->get('payscrow_notify_url'), '', true);//$this->url->link('extension/payment/payscrow/notify', '', true);
 
         $products = $this->model_account_order->getOrderProducts($this->session->data['order_id']);
@@ -61,6 +73,10 @@ class ControllerExtensionPaymentPayscrow extends Controller
 
 
         $data['product_detail'] = $products;
+=======
+        $data['url_notify'] = $this->url->link('extension/payment/payscrow/notify', '', true);
+        $data['product_detail'] = $order_info['product_detail'];
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
 
         if (preg_match("/Mobile|Android|BlackBerry|iPhone|Windows Phone/", $this->request->server['HTTP_USER_AGENT'])) {
             $data['mobile'] = true;
@@ -126,6 +142,7 @@ class ControllerExtensionPaymentPayscrow extends Controller
         }
 
         if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+<<<<<<< HEAD
 
 $this->model_extension_payment_payscrow->logger('Data received from payscrow ');
 
@@ -133,10 +150,15 @@ $this->model_extension_payment_payscrow->logger('Data received from payscrow ');
 
             $params = json_decode($response, true);
          $this->model_extension_payment_payscrow->logger($params);
+=======
+            $response = file_get_contents('php://input');
+            $params = json_decode($response, true);
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
 
             $orderId = isset($params['ref']) ? $params['ref'] : null; // Generally sent by gateway
             //                        lets validate the response is from payscrow
             if (isset($params['transactionId'])) {
+<<<<<<< HEAD
 
                    if ($this->config->get('payscrow_live_demo') == 1) {
             $gatewayUrl = "https://www.payscrow.net/api/paymentconfirmation?transactionId={$params['transactionId']}";
@@ -153,6 +175,12 @@ $this->model_extension_payment_payscrow->logger('Data received from payscrow ');
             } else {
                 $result = false;
                 $this->model_extension_payment_payscrow->logger('no transactionId');
+=======
+                $gatewayUrl = "https://www.payscrow.net/api/paymentconfirmation?transactionId={$params['transactionId']}";
+                $result =  $this->verifyRequest($gatewayUrl);
+            } else {
+                $result = false;
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
             }
 
             if (isset($params['statusCode'])) {
@@ -178,11 +206,16 @@ $this->model_extension_payment_payscrow->logger('Data received from payscrow ');
                             //
                             //$this->model_extension_payment_payscrow->addTransaction($fd_order_id, 'payment', $order_info);
 
+<<<<<<< HEAD
                             $this->model_extension_payment_payscrow->logger($message);
 
 
                             $this->model_checkout_order->addOrderHistory($order_id, $this->config->get('payscrow_order_status_success_settled_id'), $message, true);
                             $this->model_extension_payment_payscrow->logger('order added to history');
+=======
+
+                            $this->model_checkout_order->addOrderHistory($order_id, $this->config->get('payscrow_order_status_success_settled_id'), $message, true);
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
 
                             if (isset($params['statusDescription']) && ! empty($params['statusDescription'])) {
                                 $this->session->data['success'] = $statusDescription;
@@ -273,4 +306,8 @@ $this->model_extension_payment_payscrow->logger('Data received from payscrow ');
 
         return $result;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f

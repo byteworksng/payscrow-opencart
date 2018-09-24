@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
 <form action="<?php echo $action; ?>" method="POST" class="form-horizontal" id="payscrow_form_redirect">
 
   <fieldset id="payment">
@@ -13,7 +16,11 @@
     <input type="hidden" name="Items[<?php echo $i?>].Price" id="Items[<?php echo $i?>]_Price" value="<?php echo $detail['price']; ?>" />
     <input type="hidden" name="Items[<?php echo $i?>].Quantity" id="Items[<?php echo $i?>]_Quantity" value="<?php echo $detail['quantity']; ?>" />
     <input type="hidden" name="Items[<?php echo $i?>].Description" id="Items[<?php echo $i?>]_Description" value="<?php echo strip_tags(html_entity_decode($detail['description'])); ?>" />
+<<<<<<< HEAD
     <input type="hidden" name="Items[<?php echo $i?>].Deliverable" id="Items[<?php echo $i?>]_Deliverable" value="<?php echo !$isDownloadable($detail['product_id']) ?>" />
+=======
+    <input type="hidden" name="Items[<?php echo $i?>].Deliverable" id="Items[<?php echo $i?>]_Deliverable" value="<?php echo $isDownloadable($detail['product_id']) ?>" />
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
     <input type="hidden" name="Items[<?php echo $i?>].TaxAmount" id="Items[<?php echo $i?>]_TaxAmount" value="<?php echo $detail['tax']; ?>" />
     <?php $i++; endforeach; ?>
     <input type="hidden" name="GrandTotal" value="<?php echo $amount; ?>" />

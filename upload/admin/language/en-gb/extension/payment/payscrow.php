@@ -20,7 +20,11 @@ $_['text_settle_auto'] = 'Sale';
 $_['text_settle_delayed'] = 'Pre auth';
 $_['text_success_void'] = 'Transaction has been voided';
 $_['text_success_capture'] = 'Transaction has been captured';
+<<<<<<< HEAD
 $_['text_payscrow'] = '<img src="http://payscrow.net/assets/logos/logo-black.png" alt="Payscrow" title="Payscrow" style="border: 1px solid #EEEEEE; width:130px; padding: 5px" />';
+=======
+$_['text_payscrow'] = '<img src="http://payscrow.net/assets/logos/logo-black.png" alt="Payscrow" title="Payscrow" style="border: 1px solid #EEEEEE;" />';
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
 $_['text_payment_info'] = 'Payment information';
 $_['text_capture_status'] = 'Payment captured';
 $_['text_void_status'] = 'Payment voided';

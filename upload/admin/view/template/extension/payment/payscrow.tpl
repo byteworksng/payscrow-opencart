@@ -187,7 +187,11 @@
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-live-url"><?php echo $entry_live_url; ?></label>
                 <div class="col-sm-10">
+<<<<<<< HEAD
                   <input type="text" readonly name="payscrow_live_url" value="<?php echo $payscrow_live_url; ?>" placeholder="<?php echo $entry_live_url; ?>" id="input-live-url" class="form-control"/>
+=======
+                  <input type="text" name="payscrow_live_url" value="<?php echo $payscrow_live_url; ?>" placeholder="<?php echo $entry_live_url; ?>" id="input-live-url" class="form-control"/>
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
                   <?php if ($error_live_url) { ?>
                   <div class="text-danger"><?php echo $error_live_url; ?></div>
                   <?php } ?>
@@ -196,7 +200,11 @@
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-demo-url"><?php echo $entry_demo_url; ?></label>
                 <div class="col-sm-10">
+<<<<<<< HEAD
                   <input type="text" readonly name="payscrow_demo_url" value="<?php echo $payscrow_demo_url; ?>" placeholder="<?php echo $entry_demo_url; ?>" id="input-demo-url" class="form-control"/>
+=======
+                  <input type="text" name="payscrow_demo_url" value="<?php echo $payscrow_demo_url; ?>" placeholder="<?php echo $entry_demo_url; ?>" id="input-demo-url" class="form-control"/>
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
                   <?php if ($error_demo_url) { ?>
                   <div class="text-danger"><?php echo $error_demo_url; ?></div>
                   <?php } ?>
@@ -206,7 +214,11 @@
                 <label class="col-sm-2 control-label" for="input-sort-order"><span data-toggle="tooltip" title="<?php echo $help_notification; ?>"><?php echo $text_notification_url; ?></span></label>
                 <div class="col-sm-10">
                   <div class="input-group"> <span class="input-group-addon"><i class="fa fa-link"></i></span>
+<<<<<<< HEAD
                     <input type="text"  name="payscrow_notify_url" value="<?php echo $payscrow_notify_url; ?>" class="form-control"/>
+=======
+                    <input type="text" name="payscrow_notify_url" value="<?php echo $payscrow_notify_url; ?>" class="form-control"/>
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
                     <?php if ($error_notify_url) { ?>
                     <div class="text-danger"><?php echo $error_notify_url; ?></div>
                     <?php } ?>

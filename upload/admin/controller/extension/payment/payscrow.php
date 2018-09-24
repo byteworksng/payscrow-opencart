@@ -256,7 +256,11 @@ class ControllerExtensionPaymentPayscrow extends Controller
         }
 
         if (empty($data['payscrow_notify_url'])) {
+<<<<<<< HEAD
             $data['payscrow_notify_url'] = 'extension/payment/payscrow/notify';;
+=======
+            $data['payscrow_notify_url'] = HTTPS_CATALOG.'index.php?route=extension/payment/payscrow/notify';;
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
         }
 
         if (isset($this->request->post['payscrow_order_prefix'])) {
@@ -441,4 +445,8 @@ class ControllerExtensionPaymentPayscrow extends Controller
 
         return ! $this->error;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9e1aa1162c4f3ac55bc806d7640f4ca64f00860f
