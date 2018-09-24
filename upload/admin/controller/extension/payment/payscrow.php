@@ -236,7 +236,7 @@ class ControllerExtensionPaymentPayscrow extends Controller
         }
 
         if (empty($data['payscrow_live_url'])) {
-            $data['payscrow_live_url'] = 'http://www.payscrow.net/customer/transactions/start';
+            $data['payscrow_live_url'] = 'https://www.payscrow.net/customer/transactions/start';
         }
 
         if (isset($this->request->post['payscrow_demo_url'])) {
