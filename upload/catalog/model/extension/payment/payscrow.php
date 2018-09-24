@@ -1,5 +1,8 @@
 <?php
 
+// Authored by Chibuzor Ogbu
+
+
 class ModelExtensionPaymentPayscrow extends Model
 {
     public function getMethod($address, $total)

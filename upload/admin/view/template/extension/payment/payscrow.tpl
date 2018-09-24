@@ -1,4 +1,6 @@
 <?php echo $header; ?><?php echo $column_left; ?>
+
+<!-- Authored by Chibuzor Ogbu -->
 <div id="content">
   <div class="page-header">
     <div class="container-fluid">

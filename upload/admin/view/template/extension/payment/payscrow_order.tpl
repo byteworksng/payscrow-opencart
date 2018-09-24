@@ -1,3 +1,5 @@
+ <!-- Authored by Chibuzor Ogbu -->
+ 
 <h2><?php echo $text_payment_info; ?></h2>
 <?php if ($void_success) { ?>
 <div class="alert alert-success"><?php echo $void_success; ?></div>

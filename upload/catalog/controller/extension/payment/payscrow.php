@@ -1,5 +1,7 @@
 <?php
 
+// Authored by Chibuzor Ogbu
+
 class ControllerExtensionPaymentPayscrow extends Controller
 {
     public function index()

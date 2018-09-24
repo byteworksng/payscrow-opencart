@@ -1,4 +1,6 @@
 <?php
+// Authored by chibuzor Ogbu
+
 // Heading
 $_['heading_title'] = 'Payscrow Escrow Gateway';
 

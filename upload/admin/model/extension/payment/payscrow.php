@@ -1,4 +1,6 @@
 <?php
+// Authored by Chibuzor Ogbu
+
 class ModelExtensionPaymentPayscrow extends Model {
 	public function install() {
 		$this->db->query("

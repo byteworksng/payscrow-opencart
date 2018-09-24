@@ -1,4 +1,7 @@
 <?php
+
+// Authored by Chibuzor Ogbu
+
 // Heading
 $_['text_title']				= '<img src="http://payscrow.net/assets/logos/logo-black.png" alt="Payscrow" title="Payscrow" style="border: 1px solid #EEEEEE;" />';
 
