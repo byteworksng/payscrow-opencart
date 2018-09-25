@@ -9,4 +9,4 @@ use opencart extension installer on your admin page to install the compressed fi
 
 ## Plugin version
 
-2.0.4 
+v2.0.4 compatible with OpenCart 2.0
